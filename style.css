@@ -1,0 +1,123 @@
+body{
+    background-image: url(./images/slotmachinebgrnd.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: auto;
+    background-attachment: fixed;
+    text-align: center;
+}
+h1{
+    margin-top: 50px;
+    color: rgb(119, 94, 3);
+}
+.Leveltitle{
+    padding: 30px;
+}
+p{
+    color: rgb(139, 139, 139);
+}
+ul{
+    text-align: center;
+}
+#strtgmebtn{
+    background-color: black;
+    color: aliceblue;
+    box-shadow: 30px;
+    margin-top: 20px;
+}
+#modal{
+    background-color: rgb(155, 18, 18);
+    border-radius: 30px;
+    height: 80%;
+    width: 50%;
+    text-align: center;
+    margin: 100px;
+    margin-left: 480px; 
+    justify-content: center;
+    border-color:black;
+    border-block-color: black;
+    display: none;
+}
+#imageCollection{
+    display: none;
+}
+#modaltextbox{
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+#modallevel1{
+    display: none;
+    text-align: center;
+}
+#Leveltitle{
+    color: black;
+}
+/* #slots{
+    margin-top: 30px;
+    border-top: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    display: flexbox;
+    border-color: aliceblue;
+    object-fit: cover;
+    flex-direction: row;
+} */
+.slotimg1{
+    margin-top: 0px;
+    border-color: aliceblue;
+    object-fit: cover;
+    width: 20px;
+    height: 20%;
+    
+}
+.box{
+    width: 80px;
+    height: 80px;
+    border-color: aliceblue;
+    display: flexbox;
+    flex-direction:row;
+    
+}
+#gameplay{
+    margin-left: 300px;
+    border-left: 200px;
+
+}
+#score{
+    border-radius: 40px;
+    background-color: beige;
+    width: 30%;
+    justify-content: center;
+    margin-left: 240px;
+}
+#winnerimg{
+    height: 5%;
+    width: 70%;
+}
+#toughluck{
+    width: 70%;
+}
+#gameplaybtn{
+    background-color: black;
+    color: aliceblue;
+    box-shadow: 30px;
+    margin-top: 20px;
+}
+#returnbtn{
+    background-color: black;
+    color: aliceblue;
+    box-shadow: 30px;
+}
+#exitgmebtn{
+    background-color: black;
+    color: aliceblue;
+    box-shadow: 30px;
+    margin: 30px;
+}
+
+/* canvas{
+    display: flexbox;
+    border-color: blue;
+    border: 10px solid black;
+} */

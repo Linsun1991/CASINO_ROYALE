@@ -3,15 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>~CASINO ROYALE GAME~</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="./script.js"></script>
 
 </head>
 <body>
     <main>
-        <h1>CASINO ROYALE</h1>
-        <p>Welcome to Casino Royale, a fun filled slot machine game. Taking you back to the core of vegas from any location </p>
+        <h1>~CASINO ROYALE~</h1>
+        <p>Welcome to Casino Royale, a fun filled slot machine game. Taking you back to the core of sin city!</p>
+
+
+        <button id="gamebutton">GAME ON 🎰</button>
+        <div id="modal">
+            <div id="imageCollection">
+                <img class="slotreels" src="./images/slotreelicons/slotreel1.jpg" alt="image1">
+                <img class="slotreels" src="./images/slotreelicons/slotreel2.jpg" alt="image2">
+                <img class="slotreels" src="./images/slotreelicons/slotreel3.jpg" alt="image3">
+                <img class="slotreels" src="./images/slotreelicons/slotreel4.jpg" alt="image4">
+                <img class="slotreels" src="./images/slotreelicons/slotreel5.jpg" alt="image5">
+                <img class="slotreels" src="./images/slotreelicons/slotreel6.jpg" alt="image6">
+                <img class="slotreels" src="./images/slotreelicons/slotreel7.jpg" alt="image7">
+            </div>
+            <div id="strtscreen">
+                <h1>~CASINO ROYALE~</h1>
+                <p>Casino Royale is a slot game where you can play a slot machine for free</p>
+                <p>Game Rules</p>
+                <ul>
+                    <li>Rule 1: This Game is Absolutely Free</li>
+                    <li>Rule 2: Press the Start Game Buttton to Start Game Play</li>
+                    <li>Rule 3: The money earned in this game will never be paid to you</li>
+                    <li>Rule 4: Always respect the house</li>
+                </ul>
+                <button id="strtgmebtn">START GAME</button>
+            </div>
+            <div id="modaltextbox">
+                <div id="modallevel1">
+                    <h2 id="Leveltitle">LEVEL 1</h2>
+                    <div id="slots">
+                        <div class="box"><img id="slotimg1" src="./images/slotreelicons/slotreel4.jpg" alt="image1"></div>
+                        <div class="box"><img id="slotimg2" src="./images/slotreelicons/slotreel4.jpg" alt="image2"></div>
+                        <div class="box"><img id="slotimg3" src="./images/slotreelicons/slotreel4.jpg" alt="image3"></div>
+                    </div>
+                    <div id="score">You earned $0</div>
+                    <button id="gameplaybtn">PLAY</button>
+                    
+                </div>
+                <div id="tryagain"><p>You Got One More try</p><button id="returnbtn">RETURN TO GAME</button></div>
+                <div id="loser"><p>Tough Luck! Maybe Next time</p><img id="toughluck" src="./images/31998728-better-luck-next-time-red-rubber-stamp-text-vector-over-a-white-background.jpg" alt="winner image"></div>
+                <div id="winner"><p>You Won!</p><img id="winnerimg" src="./images/Jackpot.jpeg" alt="winner image"></div>
+                <button id="exitgmebtn">EXIT GAME</button>
+            </div>
+        </div>
+
+        <!-- <canvas id="clock" width="150" height="150">
+        <img src="./images/Winner.avif" width="150" height="150" alt="A clock" />
+        </canvas> -->
+
     </main>
     
 </body>
