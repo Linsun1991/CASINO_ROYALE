@@ -5,46 +5,67 @@
 
 //           ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
 //           ctx.fillRect(30, 30, 50, 50);
-//Variable declaration
+
+
+//Variable declaration------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 //Grab the buttons
 let gameButton  =  document.querySelector("#gamebutton")
-let playButton  =  document.querySelector("#gameplaybtn");
+let playButton1  =  document.querySelector("#gameplaybtnTop");
+let playButton2  =  document.querySelector("#gameplaybtnMid");
+let playButton3  =  document.querySelector("#gameplaybtnLow");
 let startButton =  document.querySelector("#strtgmebtn");
 let returnButton=  document.querySelector("#returnbtn");
 let exitButton  =  document.querySelector("#exitgmebtn");
+let gmeInstrnButton   =  document.querySelector("#gmeinstrn");
 
 //return the slotreel images in a node array
 let slotreels = document.querySelectorAll(".slotreels");
 console.log(slotreels)
+
 //grab the slots where imges need to be displayed
 let slot1 = document.querySelector("#slotimg1");
 let slot2 = document.querySelector("#slotimg2");
 let slot3 = document.querySelector("#slotimg3");
 
-//grab the random images from the node array returned to slotreels
+let score = document.querySelector("#score");
+let sum = 100;
+score.innerHTML=`You earned ${sum}`;
 
 
-//functions
+//functions------------------------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 const gameON = ()=>{
     modal.style.display = "block";
     strtscreen.style.display="block";
-    tryagain.style.display = "none";
+    logic.style.display = "none";
     loser.style.display = "none";
     winner.style.display = "none";
     modallevel1.style.display = "none";
-
 }
 
 const startGame=()=>{
     modallevel1.style.display="block";
     strtscreen.style.display="none";
-    gameplaybtn.style.display = "inline";
+    betButtons.style.display = "inline";
+    slots.style.display = "flex";
+    logic.style.display = "none";
+    let score = document.querySelector("#score");
+    sum = 100;
+    score.innerHTML=`You earned $${sum}`;
 }
 
-const gamePlay = ()=>{
+const gmeInstructions = ()=>{
+    modal.style.display = "block";
+    strtscreen.style.display="none";
+    logic.style.display = "block";
+    loser.style.display = "none";
+    winner.style.display = "none";
+    modallevel1.style.display = "none";
+}
+
+const gamePlay = (event)=>{
     console.log("gameplay started");
-    let randomImage1 = slotreels[Math.floor(Math.random()*slotreels.length)];
+    let randomImage1 = slotreels[Math.floor(Math.random()*slotreels.length)];  //grab the random images from the node array returned to slotreels
     let randomImage2 = slotreels[Math.floor(Math.random()*slotreels.length)];
     let randomImage3 = slotreels[Math.floor(Math.random()*slotreels.length)];
     console.log("random Image is", randomImage1.src)
@@ -55,64 +76,139 @@ const gamePlay = ()=>{
     slot1.src=randomImage1Link;
     slot2.src=randomImage2Link;
     slot3.src=randomImage3Link;
-    let finalimg1=slot1.src;
-    let finalimg2=slot2.src;
-    let finalimg3=slot3.src;
-
-    let score = document.querySelector("#score");
-    let sum=100;
-    score.innerHTML=`You earned ${sum}`;
-    let game=true;
     
-do {
-    if(slot1.src===slot2.src&&slot2.src===slot3.src){
-        console.log("condtion 1");
-        sum+=100;
-        score.innerHTML=`You earned ${sum}`;
+
+    if (event.target==playButton1){
         
-        if(sum===1000){
-            winner.style.display="block";
-            game=false;
-        }
-    }else if(slot1.src===slot2.src||slot1.src===slot3.src||slot2.src===slot3.src){
-        console.log("condtion 2");
-        sum-=20;
-        score.innerHTML=`You earned ${sum}`;
-        playButton.addEventListener("click", gamePlay);
-        game=false;
-    }else if(slot1.src!=slot2.src&&slot1.src!=slot3.src&&slot2.src===slot3.src){
-        console.log("condtion 4");
-        sum-=20;
-        score.innerHTML=`You earned ${sum}`;
-        game=false; 
-         if (sum===0){
+        if(slot1.src===slot2.src&&slot2.src===slot3.src){
+        console.log("condtion 1");
+        sum += 100;
+        console.log(sum);
+        
+        } else if (slot1.src === slot2.src||slot1.src === slot3.src||slot2.src === slot3.src){
+            console.log("condtion 2");
+            sum += 50;
+            console.log(sum);
+        }else{
             console.log("condtion 3");
-            Leveltitle.style.display = "none";
-            gameplaybtn.style.display = "none";
-            slots.style.display="block";
-            loser.style.display="block";
-            game =false;
+            sum -= 100;
+            console.log(sum);
         }
-    } 
-} while (game)
+
+        if (sum <= 0){
+        console.log("sum is less than 0");
+        Leveltitle.style.display = "none";
+        betButtons.style.display = "none";
+        slots.style.display = "none";
+        loser.style.display = "block";
+        score.innerHTML=`You earned $${sum}`;
+        return false;
+        }else if (sum>=1000){
+            winner.style.display="block";
+            score.innerHTML=`You earned $${sum}`;
+            betButtons.style.display = "none";
+            slots.style.display = "none";
+            Leveltitle.style.display = "none";
+            return false;
+        }else{
+            score.innerHTML=`You earned $${sum}`;
+            return true;
+        }
+    }  
+    else if(event.target==playButton2){
+        if(slot1.src===slot2.src&&slot2.src===slot3.src){
+            console.log("condtion 1");
+            sum += 50;
+            console.log(sum);
+            
+        } else if (slot1.src === slot2.src||slot1.src === slot3.src||slot2.src === slot3.src){
+            console.log("condtion 2");
+            sum += 25;
+            console.log(sum);
+        }else{
+            console.log("condtion 3");
+            sum -= 50;
+            console.log(sum);
+        }
+    
+        if (sum <= 0){
+            console.log("sum is less than 0");
+            Leveltitle.style.display = "none";
+            betButtons.style.display = "none";
+            slots.style.display = "none";
+            loser.style.display = "block";
+            score.innerHTML=`You earned $${sum}`;
+            return false;
+        }else if (sum>=1000){
+            winner.style.display="block";
+            score.innerHTML=`You earned $${sum}`;
+            betButtons.style.display = "none";
+            slots.style.display = "none";
+            Leveltitle.style.display = "none";
+            return false;
+        }else{
+            score.innerHTML=`You earned $${sum}`;
+            return true;
+        }
+    }  
+    else if (event.target==playButton3){
+        if(slot1.src===slot2.src&&slot2.src===slot3.src){
+            console.log("condtion 1");
+            sum += 25;
+            console.log(sum);
+            
+        } else if (slot1.src === slot2.src||slot1.src === slot3.src||slot2.src === slot3.src){
+            console.log("condtion 2");
+            sum += 13;
+            console.log(sum);
+        }else{
+            console.log("condtion 3");
+            sum -= 25;
+            console.log(sum);
+        }
+    
+        if (sum <= 0){
+            console.log("sum is less than 0");
+            Leveltitle.style.display = "none";
+            betButtons.style.display = "none";
+            slots.style.display = "none";
+            loser.style.display = "block";
+            score.innerHTML=`You earned $${sum}`;
+            return false;
+        }else if (sum>=1000){
+            winner.style.display="block";
+            score.innerHTML=`You earned $${sum}`;
+            betButtons.style.display = "none";
+            slots.style.display = "none";
+            Leveltitle.style.display = "none";
+            return false;
+        }else{
+            score.innerHTML=`You earned $${sum}`;
+            return true;
+        }
+    }
     
 }
 
 const returnToGame = ()=>{
-    strtscreen.style.display = "none";
-    tryagain.style.display = "none";
-    loser.style.display = "none";
-    winner.style.display = "none";
-
+    gameON();
 }
 
 const exit = ()=>{
     modal.style.display = "none";
 }
 
-//EventListner
+
+
+//EventListner------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 gameButton.addEventListener("click", gameON);
 startButton.addEventListener("click",startGame)
-playButton.addEventListener("click", gamePlay);
+playButton1.addEventListener("click", gamePlay);
+playButton2.addEventListener("click", gamePlay);
+playButton3.addEventListener("click", gamePlay);
 exitButton.addEventListener("click", exit);
 returnButton.addEventListener("click", returnToGame);
+gmeInstrnButton.addEventListener("click", gmeInstructions);
+
+
+// API

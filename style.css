@@ -5,18 +5,35 @@ body{
     background-position: auto;
     background-attachment: fixed;
     text-align: center;
+
 }
 h1{
     margin-top: 50px;
-    color: rgb(119, 94, 3);
+    color: rgb(136, 108, 9);
 }
 .Leveltitle{
     padding: 30px;
 }
 p{
-    color: rgb(139, 139, 139);
+    color: rgb(235, 235, 235);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
 }
-ul{
+li{
+    text-align: left;
+}
+#gamebutton{
+    background-color: black;
+    color: aliceblue;
+    box-shadow: 30px;
+    margin: 20px;
+    font-size: 30px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 8px;
+}
+#strtscreen{
+    justify-content: center;
     text-align: center;
 }
 #strtgmebtn{
@@ -31,12 +48,13 @@ ul{
     height: 80%;
     width: 50%;
     text-align: center;
-    margin: 100px;
-    margin-left: 480px; 
+    margin: auto;
     justify-content: center;
+    border: 6px solid;
     border-color:black;
     border-block-color: black;
     display: none;
+    
 }
 #imageCollection{
     display: none;
@@ -49,20 +67,23 @@ ul{
 #modallevel1{
     display: none;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 #Leveltitle{
     color: black;
 }
-/* #slots{
+#slots{
     margin-top: 30px;
     border-top: 10px;
     padding-top: 10px;
     margin-bottom: 10px;
-    display: flexbox;
+    display: flex;
     border-color: aliceblue;
     object-fit: cover;
     flex-direction: row;
-} */
+    justify-content: center;
+}
 .slotimg1{
     margin-top: 0px;
     border-color: aliceblue;
@@ -71,13 +92,21 @@ ul{
     height: 20%;
     
 }
+
 .box{
-    width: 80px;
-    height: 80px;
-    border-color: aliceblue;
-    display: flexbox;
+    width: 180px;
+    height: 180px;
+    border: 5px solid rgb(1, 2, 4);
+    display: flex;
     flex-direction:row;
-    
+    padding: 1px;
+    box-sizing: border-box;
+    object-fit: cover;
+
+}
+.box img{
+    max-width: 100%;
+    max-height: 100%;
 }
 #gameplay{
     margin-left: 300px;
@@ -87,10 +116,34 @@ ul{
 #score{
     border-radius: 40px;
     background-color: beige;
-    width: 30%;
+    /* display: block; */
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    display: block;
     justify-content: center;
-    margin-left: 240px;
+
 }
+#gameplaybtnTop{
+    background-color: rgb(4, 4, 24);
+    color: white;
+    box-shadow: 10px;
+    font-size: large;
+    margin: 10px;
+}
+#gameplaybtnMid{
+    background-color: rgb(4, 4, 24);
+    color: white;
+    box-shadow: 10px;
+    font-size: large;
+}
+#gameplaybtnLow{
+    background-color: rgb(4, 4, 24);
+    color: white;
+    box-shadow: 10px;
+    font-size: large;
+}
+
 #winnerimg{
     height: 5%;
     width: 70%;
@@ -98,11 +151,39 @@ ul{
 #toughluck{
     width: 70%;
 }
-#gameplaybtn{
-    background-color: black;
-    color: aliceblue;
+#betButtons{
+    color: rgb(5, 25, 43);
     box-shadow: 30px;
     margin-top: 20px;
+    font-size: large;
+    border-top: 20px;
+    padding: 20px;
+}
+#logic{
+    text-align: center;
+    display: block;
+    justify-content: left;
+}
+#rules{
+    text-align: left;
+}
+#underline{
+    text-decoration: solid underline;
+}
+#betRules{
+    text-align: left;
+    margin-left: 0px;
+    display: inline;
+    margin-bottom: 10px;
+    border-bottom: 10px;
+    padding: 10px;
+}
+.betRules1{
+    text-align: left;
+}
+li{
+    text-align:left;
+    margin-bottom: 10px;
 }
 #returnbtn{
     background-color: black;
@@ -114,6 +195,7 @@ ul{
     color: aliceblue;
     box-shadow: 30px;
     margin: 30px;
+    margin-bottom: 5px;
 }
 
 /* canvas{
