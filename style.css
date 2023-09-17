@@ -197,7 +197,19 @@ li{
     margin: 30px;
     margin-bottom: 5px;
 }
-
+.musicBtn{
+    background-color: rgb(142, 5, 5);
+    color: black;
+    text-decoration: solid;
+    box-sizing: content-box;
+    box-shadow: 30px;
+}
+#startplay{
+    display: none;
+}
+#stopplay{
+    display: none;
+}
 /* canvas{
     display: flexbox;
     border-color: blue;

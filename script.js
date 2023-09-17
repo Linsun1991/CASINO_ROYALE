@@ -1,27 +1,19 @@
-// const canvas = document.getElementById("clock");
-// const ctx = canvas.getContext("2d");
-// ctx.fillStyle = "rgb(200, 0, 0)";
-//           ctx.fillRect(10, 10, 50, 50);
-
-//           ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-//           ctx.fillRect(30, 30, 50, 50);
-
-
 //Variable declaration------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 //Grab the buttons
-let gameButton  =  document.querySelector("#gamebutton")
-let playButton1  =  document.querySelector("#gameplaybtnTop");
-let playButton2  =  document.querySelector("#gameplaybtnMid");
-let playButton3  =  document.querySelector("#gameplaybtnLow");
-let startButton =  document.querySelector("#strtgmebtn");
-let returnButton=  document.querySelector("#returnbtn");
-let exitButton  =  document.querySelector("#exitgmebtn");
-let gmeInstrnButton   =  document.querySelector("#gmeinstrn");
+let gameButton      =      document.querySelector("#gamebutton")
+let playButton1     =      document.querySelector("#gameplaybtnTop");
+let playButton2     =      document.querySelector("#gameplaybtnMid");
+let playButton3     =      document.querySelector("#gameplaybtnLow");
+let startButton     =      document.querySelector("#strtgmebtn");
+let returnButton    =      document.querySelector("#returnbtn");
+let exitButton      =      document.querySelector("#exitgmebtn");
+let gmeInstrnButton =      document.querySelector("#gmeinstrn");
+let musicButton     =      document.querySelector(".musicBtn");
+let pauseButton     =      document.querySelector("#stopplay")
 
 //return the slotreel images in a node array
 let slotreels = document.querySelectorAll(".slotreels");
-console.log(slotreels)
 
 //grab the slots where imges need to be displayed
 let slot1 = document.querySelector("#slotimg1");
@@ -32,8 +24,31 @@ let score = document.querySelector("#score");
 let sum = 100;
 score.innerHTML=`You earned ${sum}`;
 
+//music array to access the music tracks
+
+let musiclist = document.getElementsByClassName("audio");
+let playSong = musiclist[Math.floor(Math.random()*musiclist.length)];
+
 
 //functions------------------------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+const playMusic  = ()=>{
+    console.log("we are now in the music function");
+    console.log(playSong);
+    console.log(musiclist);
+    // musiclist.forEach(element => {
+    //     element.play();
+    // });
+    playSong.play();
+    // musiclist.forEach(element => {
+        
+    // }); 
+}
+
+const stopMusic = ()=>{
+    console.log("we are now in the stopping music function");
+    playSong.pause();
+}
+
 const gameON = ()=>{
     modal.style.display = "block";
     strtscreen.style.display="block";
@@ -41,6 +56,9 @@ const gameON = ()=>{
     loser.style.display = "none";
     winner.style.display = "none";
     modallevel1.style.display = "none";
+    playMusic();
+    startplay.style.display = "none";
+    stopplay.style.display = "inline";
 }
 
 const startGame=()=>{
@@ -68,7 +86,7 @@ const gamePlay = (event)=>{
     let randomImage1 = slotreels[Math.floor(Math.random()*slotreels.length)];  //grab the random images from the node array returned to slotreels
     let randomImage2 = slotreels[Math.floor(Math.random()*slotreels.length)];
     let randomImage3 = slotreels[Math.floor(Math.random()*slotreels.length)];
-    console.log("random Image is", randomImage1.src)
+    
     let randomImage1Link=randomImage1.src;
     let randomImage2Link=randomImage2.src;
     let randomImage3Link=randomImage3.src;
@@ -196,6 +214,9 @@ const returnToGame = ()=>{
 
 const exit = ()=>{
     modal.style.display = "none";
+    startplay.style.display = "none";
+    stopplay.style.display = "none";
+    stopMusic();
 }
 
 
@@ -209,6 +230,10 @@ playButton3.addEventListener("click", gamePlay);
 exitButton.addEventListener("click", exit);
 returnButton.addEventListener("click", returnToGame);
 gmeInstrnButton.addEventListener("click", gmeInstructions);
+musicButton.addEventListener("click", playMusic);
+pauseButton.addEventListener("click", stopMusic);
+
+
 
 
 // API
