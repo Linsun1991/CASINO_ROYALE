@@ -35,18 +35,16 @@ const playMusic  = ()=>{
     console.log("we are now in the music function");
     console.log(playSong);
     console.log(musiclist);
-    // musiclist.forEach(element => {
-    //     element.play();
-    // });
     playSong.play();
-    // musiclist.forEach(element => {
-        
-    // }); 
+    playSong.addEventListener("ended", function (){
+        playMusic();
+    }) 
 }
 
 const stopMusic = ()=>{
     console.log("we are now in the stopping music function");
     playSong.pause();
+    playSong.currentTime = 0;
 }
 
 const gameON = ()=>{
