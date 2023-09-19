@@ -32,9 +32,6 @@ let playSong = musiclist[Math.floor(Math.random()*musiclist.length)];
 
 //functions------------------------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 const playMusic  = ()=>{
-    console.log("we are now in the music function");
-    console.log(playSong);
-    console.log(musiclist);
     playSong.play();
     playSong.addEventListener("ended", function (){
         playMusic();
@@ -42,7 +39,6 @@ const playMusic  = ()=>{
 }
 
 const stopMusic = ()=>{
-    console.log("we are now in the stopping music function");
     playSong.pause();
     playSong.currentTime = 0;
 }
@@ -80,7 +76,6 @@ const gmeInstructions = ()=>{
 }
 
 const gamePlay = (event)=>{
-    console.log("gameplay started");
     let randomImage1 = slotreels[Math.floor(Math.random()*slotreels.length)];  //grab the random images from the node array returned to slotreels
     let randomImage2 = slotreels[Math.floor(Math.random()*slotreels.length)];
     let randomImage3 = slotreels[Math.floor(Math.random()*slotreels.length)];
@@ -97,22 +92,14 @@ const gamePlay = (event)=>{
     if (event.target==playButton1){
         
         if(slot1.src===slot2.src&&slot2.src===slot3.src){
-        console.log("condtion 1");
         sum += 100;
-        console.log(sum);
-        
         } else if (slot1.src === slot2.src||slot1.src === slot3.src||slot2.src === slot3.src){
-            console.log("condtion 2");
             sum += 50;
-            console.log(sum);
         }else{
-            console.log("condtion 3");
             sum -= 100;
-            console.log(sum);
         }
 
         if (sum <= 0){
-        console.log("sum is less than 0");
         Leveltitle.style.display = "none";
         betButtons.style.display = "none";
         slots.style.display = "none";
@@ -133,22 +120,14 @@ const gamePlay = (event)=>{
     }  
     else if(event.target==playButton2){
         if(slot1.src===slot2.src&&slot2.src===slot3.src){
-            console.log("condtion 1");
-            sum += 50;
-            console.log(sum);
-            
+            sum += 50;        
         } else if (slot1.src === slot2.src||slot1.src === slot3.src||slot2.src === slot3.src){
-            console.log("condtion 2");
             sum += 25;
-            console.log(sum);
         }else{
-            console.log("condtion 3");
             sum -= 50;
-            console.log(sum);
         }
     
         if (sum <= 0){
-            console.log("sum is less than 0");
             Leveltitle.style.display = "none";
             betButtons.style.display = "none";
             slots.style.display = "none";
@@ -169,22 +148,15 @@ const gamePlay = (event)=>{
     }  
     else if (event.target==playButton3){
         if(slot1.src===slot2.src&&slot2.src===slot3.src){
-            console.log("condtion 1");
             sum += 25;
-            console.log(sum);
             
         } else if (slot1.src === slot2.src||slot1.src === slot3.src||slot2.src === slot3.src){
-            console.log("condtion 2");
             sum += 13;
-            console.log(sum);
         }else{
-            console.log("condtion 3");
             sum -= 25;
-            console.log(sum);
         }
     
         if (sum <= 0){
-            console.log("sum is less than 0");
             Leveltitle.style.display = "none";
             betButtons.style.display = "none";
             slots.style.display = "none";
