@@ -127,7 +127,7 @@ li{
     border-radius: 40px;
     background-color: beige;
     /* display: block; */
-    width: 200px;
+    width: auto;
     text-align: center;
     margin: auto;
     display: block;
@@ -140,18 +140,21 @@ li{
     box-shadow: 10px;
     font-size: large;
     margin: 10px;
+    
 }
 #gameplaybtnMid{
     background-color: rgb(4, 4, 24);
     color: white;
     box-shadow: 10px;
     font-size: large;
+    margin: 10px;
 }
 #gameplaybtnLow{
     background-color: rgb(4, 4, 24);
     color: white;
     box-shadow: 10px;
     font-size: large;
+    margin: 10px;
 }
 
 #winnerimg{
@@ -164,10 +167,11 @@ li{
 #betButtons{
     color: rgb(5, 25, 43);
     box-shadow: 30px;
-    margin-top: 20px;
+    margin: auto;
     font-size: large;
     border-top: 20px;
-    padding: 20px;
+    padding: auto;
+    
 }
 #logic{
     text-align: center;
