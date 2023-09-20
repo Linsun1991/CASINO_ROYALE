@@ -25,13 +25,12 @@ let sum = 100;
 score.innerHTML=`You earned ${sum}`;
 
 //music array to access the music tracks
-
 let musiclist = document.getElementsByClassName("audio");
-let playSong = musiclist[Math.floor(Math.random()*musiclist.length)];
 
 
 //functions------------------------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 const playMusic  = ()=>{
+    let playSong = musiclist[Math.floor(Math.random()*musiclist.length)];
     playSong.play();
     playSong.addEventListener("ended", function (){
         playMusic();
