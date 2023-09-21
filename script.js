@@ -26,20 +26,28 @@ score.innerHTML=`You earned ${sum}`;
 
 //music array to access the music tracks
 let musiclist = document.getElementsByClassName("audio");
-
+let playSong = 0;
 
 //functions------------------------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 const playMusic  = ()=>{
-    let playSong = musiclist[Math.floor(Math.random()*musiclist.length)];
+   if (playSong ===0){
+    playSong = musiclist[Math.floor(Math.random()*musiclist.length)];
     playSong.play();
     playSong.addEventListener("ended", function (){
+        playSong=0;
         playMusic();
     }) 
+   }
+    
 }
 
 const stopMusic = ()=>{
+   if(playSong!=0){
     playSong.pause();
     playSong.currentTime = 0;
+    console.log(playSong);
+    playSong=0;
+   }
 }
 
 const gameON = ()=>{
