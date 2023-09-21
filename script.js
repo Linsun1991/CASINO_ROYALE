@@ -33,12 +33,15 @@ const playMusic  = ()=>{
    if (playSong ===0){
     playSong = musiclist[Math.floor(Math.random()*musiclist.length)];
     playSong.play();
-    playSong.addEventListener("ended", function (){
-        playSong=0;
-        playMusic();
-    }) 
+    playSong.addEventListener("ended", nextSong) 
    }
     
+}
+
+const nextSong =()=>{
+    playSong.removeEventListener("ended", nextSong)
+    playSong=0;
+    playMusic();  
 }
 
 const stopMusic = ()=>{
